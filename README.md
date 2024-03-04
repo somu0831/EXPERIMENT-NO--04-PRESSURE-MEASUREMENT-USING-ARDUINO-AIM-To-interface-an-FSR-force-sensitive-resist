@@ -63,6 +63,8 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 ### FIGURE-03 CIRCUIT DIAGRAM
 
+![Screenshot 2024-02-29 115800](https://github.com/somu0831/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/162110820/ca78d6ea-1238-4185-8eb3-b527126407ea)
+![Screenshot 2024-02-29 115106](https://github.com/somu0831/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/162110820/d70c5449-b5b6-43e1-bd73-91cc76c1a948)
 
 
 ### PROCEDURE:
@@ -79,12 +81,40 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
+ *your roll no :212223240111
+ * your name :panduru somu 
+ * department and year :AMIL and first year
  
  
- 
+ ~~~
+int fsr;
+int LED= 7;
+void setup()
+{
+pinMode(LED, OUTPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+fsr=analogRead(A0);
+Serial.print("raw value=");
+Serial.println(fsr);
+delay(1000);
+int m;
+m = map(fsr,0,159,0,10);
+Serial.print("mapped value=");
+Serial.println(m);
+delay(1000);
+if(m>5)
+{
+digitalWrite(LED,HIGH);
+delay(500);
+digitalWrite(LED,LOW);
+}
+}
+~~~
+![WhatsApp Image 2024-03-04 at 22 34 47_5bca52fe](https://github.com/somu0831/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/162110820/7bedc04f-fe8e-41ee-b8ef-4d9903184242)
+
  
  
  
@@ -99,10 +129,11 @@ The easiest way to measure a resistive sensor is to connect one end to power and
  
 
 
-![image](https://user-images.githubusercontent.com/36288975/163532939-d6888ae1-4068-4d83-86a7-fc4c32d5179e.png)
-
+ 
 
 ### TABLE -02 standard deviation table 
+![WhatsApp Image 2024-03-04 at 22 34 47_ed78c1e4](https://github.com/somu0831/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/162110820/c0b79117-d39f-4801-b3f3-0795e9339d30)
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
