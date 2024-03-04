@@ -11,7 +11,7 @@ To interface an FSR(force sensitive resistor) and scale the output voltage obtai
 1.	FSR  (force sensitive resistor)
 2.	1 KΩ resistor 
 3.	Arduino Uno 
-4.	USB Interfacing cable 
+4.	USB Interfacing cable
 5.	Connecting wires 
 
 
